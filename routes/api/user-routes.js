@@ -19,7 +19,6 @@ router
 router
 .route('/:id')
 .get(getUserById)
-.post(createUser)
 .put(updateUser)
 .delete(deleteUser)
 
