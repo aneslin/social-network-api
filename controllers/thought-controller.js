@@ -14,10 +14,10 @@ const thoughtController = {
     Thought.findOne({ _id: params.id })
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: "No user found with this id" });
+          res.status(404).json({ message: "No thought found with this id" });
           return;
         }
-        res.json(dbUserData);
+        res.json(dbThoughtData);
       })
       .catch((err) => res.json(err));
   },
@@ -31,12 +31,12 @@ const thoughtController = {
           { new: true }
         );
       })
-      .then((dbUserData) => {
-        if (!dbUserData) {
+      .then((dbThoughtData) => {
+        if (!dbThoughtData) {
           res.status(404).json({ message: "No user found with this id" });
           return;
         }
-        res.json(dbUserData);
+        res.json(dbThoughtData);
       })
       .catch((err) => res.json(err));
   },
@@ -51,7 +51,7 @@ const thoughtController = {
           res.status(404).json({ message: "No thought found with this id" });
           return;
         }
-        res.json(dbUserData);
+        res.json(dbThoughtData);
       })
       .catch((err) => res.json(err));
   },
@@ -63,7 +63,7 @@ deleteThought({params}, res){
     if (!dbThoughtData){
         res.status(404).json({ message: "No thought found with this id" });
         return; 
-    } res.json(dbUserData);
+    } res.json(dbThoughtData);
     }) .catch((err) => res.json(err));
 },
 
@@ -76,7 +76,7 @@ createReaction({ params, body}, res){
         if (!dbThoughtData){
             res.status(404).json({ message: "No thought found with this id" });
             return; 
-        } res.json(dbUserData); 
+        } res.json(dbThoughtData); 
     }).catch((err) => res.json(err));
 },
 
@@ -89,7 +89,7 @@ deleteReaction({ params, body}, res){
         if (!dbThoughtData){
             res.status(404).json({ message: "No thought found with this id" });
             return; 
-        } res.json(dbUserData); 
+        } res.json(dbThoughtData); 
     }).catch((err) => res.json(err));
 },
 
